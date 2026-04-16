@@ -1,0 +1,6 @@
+@article{k2think2025,
+  title={K2-Think: A Parameter-Efficient Reasoning System},
+  author={Institute of Foundation Models, MBZUAI},
+  journal={arXiv preprint arXiv:2509.07604},
+  year={2025}
+}

@@ -1,0 +1,6 @@
+@inproceedings{cheng2025guru,
+  title={Revisiting Reinforcement Learning for LLM Reasoning from a Cross-Domain Perspective},
+  author={Cheng, Zhoujun and Hao, Shibo and Liu, Tianyang and Zhou, Fan and Xie, Yutao and Yao, Feng and Bian, Yuexin and Zhuang, Yonghao and Dey, Nilabjo and Zha, Yuheng and Gu, Yi and Zhou, Kun and Wang, Yuqi and Li, Yuan and Fan, Richard and She, Jianshu and Gao, Chengqian and Saparov, Abulhair and Li, Haonan and Killian, Taylor W. and Yurochkin, Mikhail and Liu, Zhengzhong and Xing, Eric P. and Hu, Zhiting},
+  booktitle={Conference on Neural Information Processing Systems (NeurIPS) Datasets \& Benchmarks},
+  year={2025}
+}

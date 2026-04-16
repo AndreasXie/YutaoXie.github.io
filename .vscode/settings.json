@@ -1,0 +1,16 @@
+{
+  "liveServer.settings.ignoreFiles": [
+    ".git/**",
+    "assets_backup/**",
+    "src/**",
+    "node_modules/**",
+    "**/*.md"
+  ],
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/assets_backup/**": true,
+    "**/src/**": true
+  }
+}

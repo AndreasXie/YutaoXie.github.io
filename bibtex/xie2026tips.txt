@@ -1,0 +1,6 @@
+@inproceedings{xie2026tips,
+  title={TIPS: Turn-Level Information–Potential Reward Shaping for Search-Augmented LLMs},
+  author={Xie, Yutao and Thomas, Nathaniel and Hansen, Nicklas and Fu, Yang and Li, Erran and Wang, Xiaolong},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2026}
+}

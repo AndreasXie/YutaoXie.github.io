@@ -1,0 +1,7 @@
+@article{xie2024pig,
+  title={Sound Identification of Abnormal Pig Vocalizations: Enhancing Livestock Welfare Monitoring on Smart Farms},
+  author={Xie, Yutao and Wang, Jun and Chen, Cheng and Yin, Taixin and Yang, Shiyu and Li, Zhiyuan and Zhang, Ye and Ke, Juyang and Song, Le and Gan, Lin},
+  journal={Information Processing \& Management},
+  year={2024},
+  doi={10.1016/j.ipm.2024.103770}
+}

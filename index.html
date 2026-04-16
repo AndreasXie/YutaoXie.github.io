@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yutao Xie 谢宇涛">
+    <meta property="og:title" content="Yutao Xie 谢宇涛">
+    <meta property="og:description" content="MS Student, UC San Diego">
+    <meta property="og:image" content="https://yutaoxie.github.io/files/me.png">
+    <meta property="og:url" content="https://yutaoxie.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yutao Xie">
+    <meta name="twitter:description" content="MS Student, UC San Diego">
+    <meta name="twitter:image" content="https://yutaoxie.github.io/files/me.png">
+    <title>Yutao Xie 谢宇涛</title>
+    <link rel="apple-touch-icon" href="static/favicon.ico">
+    <link rel="icon" type="image/png" href="static/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css?v=1.3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        function showNotes() {
+            var div = document.getElementById("hidden");
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            }
+            div.scrollIntoView({behavior: "smooth", block: "start"});
+        }
+        function toggleMisc() {
+            var content = document.getElementById("misc-content");
+            var arrow = document.getElementById("misc-arrow");
+            if (content.classList.contains("open")) {
+                content.classList.remove("open");
+                arrow.textContent = "▸";
+                var picks = document.getElementById("misc-picks-content");
+                var picksArrow = document.getElementById("misc-picks-arrow");
+                if (picks) picks.classList.remove("open");
+                if (picksArrow) picksArrow.textContent = "▸";
+            } else {
+                content.classList.add("open");
+                arrow.textContent = "▾";
+            }
+        }
+        function toggleMiscPicks() {
+            var content = document.getElementById("misc-picks-content");
+            var arrow = document.getElementById("misc-picks-arrow");
+            if (content.classList.contains("open")) {
+                content.classList.remove("open");
+                arrow.textContent = "▸";
+            } else {
+                content.classList.add("open");
+                arrow.textContent = "▾";
+            }
+        }
+        function scrollToContact() {
+            var div = document.getElementById("contact");
+            div.scrollIntoView({behavior: "smooth", block: "start"});
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var header = document.querySelector(".header");
+            var nav = document.getElementById("sticky-nav");
+            var observer = new IntersectionObserver(function(entries) {
+                nav.classList.toggle("visible", !entries[0].isIntersecting);
+            }, {threshold: 0});
+            observer.observe(header);
+            document.querySelectorAll(".stars[data-repo]").forEach(function(el) {
+                fetch("https://api.github.com/repos/" + el.dataset.repo)
+                    .then(function(r) { return r.json(); })
+                    .then(function(d) {
+                        if (d.stargazers_count) {
+                            var svg = el.querySelector(".gh-icon");
+                            el.textContent = " ★ " + d.stargazers_count.toLocaleString();
+                            if (svg) el.prepend(svg);
+                        }
+                    })
+                    .catch(function() {});
+            });
+        });
+    </script>
+</head>
+<body>
+<nav class="sticky-nav noselect" id="sticky-nav">
+    <div class="sticky-nav-content">
+        <a class="sticky-nav-name bold" href="javascript:void(0);" onclick="window.scrollTo({top:0,behavior:'smooth'})">Yutao Xie</a>
+        <div class="sticky-nav-links">
+            <a href="javascript:void(0);" onclick="scrollToContact()">Email</a>
+            <a href="https://scholar.google.com/citations?user=pyg7Oa0AAAAJ&hl=en">Scholar</a>
+            <a href="https://github.com/AndreasXie">GitHub</a>
+            <a href="https://drive.google.com/file/d/1_i8ulyx9ij2eVV7dOEbj4GGVC7i_BgWb/view?usp=sharing" target="_blank">CV</a>
+        </div>
+    </div>
+</nav>
+<div class="header noselect">
+    <div class="header-content">
+        <div class="header-body">
+            <div class="header-left">
+                <h1 class="header-title"><span class="name-first">Yutao</span> <span class="name-last">Xie</span> &nbsp;<span class="header-name-zh">谢宇涛</span></h1>
+                <p>
+                    I am an incoming Ph.D. student at <a href="https://www.ucsb.edu">UC Santa Barbara</a>, where I will be advised by Prof. <a href="https://code-terminator.github.io">Shiyu Chang</a>.
+                    I received my M.S. in Computer Science from <a href="https://ucsd.edu">UC San Diego</a>, where I worked with Prof. <a href="https://xiaolonw.github.io">Xiaolong Wang</a> and Prof. <a href="http://zhiting.ucsd.edu/">Zhiting Hu</a>.
+                    Prior to that, I received my B.Eng. in Software Engineering from <a href="https://www.tju.edu.cn">Tianjin University</a>.
+                </p>
+                <!-- <p>My research interests center on <strong>Reinforcement Learning</strong> and <strong>Foundation Models</strong>. I study how optimization and methodology structure shape agent behaviors, and how these findings can inform the design of scalable foundation model decision-making systems.</p> -->
+                <div class="header-icons">
+                    <a href="javascript:void(0);" onclick="scrollToContact()" title="Email"><i class="fas fa-envelope"></i></a>
+                    <span class="icon-sep">/</span>
+                    <a href="https://scholar.google.com/citations?user=pyg7Oa0AAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <span class="icon-sep">/</span>
+                    <a href="https://github.com/AndreasXie" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    <span class="icon-sep">/</span>
+                    <a href="https://drive.google.com/file/d/1_i8ulyx9ij2eVV7dOEbj4GGVC7i_BgWb/view?usp=sharing" title="CV" target="_blank"><i class="fas fa-file-pdf"></i></a>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="static/assets/images/profile.jpg" alt="Yutao Xie" class="header-photo">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content" style="padding-bottom: 64px;">
+    <div>
+        <h2 class="noselect">Research</h2>
+        <p>My work sits at the intersection of <strong>reinforcement learning</strong> and <strong>large language models</strong>, and roughly alternates between two modes:</p>
+        <ul>
+            <li><strong>Understanding how RL works for Foundation Models</strong> — studying empirical regularities behind RL post-training, such as how to spend compute well and when reasoning transfers across domains (<a href="https://compute-optimal-rl-llm-scaling.github.io/">IsoCompute</a>, <a href="https://guru-reasoning.github.io/">Guru</a>).</li>
+            <li><strong>Methods for RLVR training</strong> — designing algorithms for reward shaping, credit assignment, and more stable optimization in reasoning RL (<a href="https://arxiv.org/abs/2603.22293">TIPS</a>).</li>
+        </ul>
+        <p>Going forward, I am also drawn to <strong>world models and planning</strong>: learning dynamics predictors from interaction and coupling them with RL for search, planning, and data-efficient control.</p>
+    </div>
+    <div>
+        <h2 class="noselect">Publications and preprints</h2>
+        <p>Papers sorted by recency. Representative papers are <span style="background-color: #fff8df">highlighted</span>.</p>
+
+        <div class="highlight publication row">
+            <div class="row-media" style="background-image: url(static/assets/videos/isocompute.gif);"></div>
+            <div class="row-text">
+                <a class="publication-title bold" href="https://compute-optimal-rl-llm-scaling.github.io/">IsoCompute Playbook: Optimally Scaling Sampling Compute for RL Training of LLMs</a><br/>
+                Zhoujun Cheng*, <span class="bold">Yutao Xie*</span>, Yuxiao Qu*, Amrith Setlur*, Shibo Hao, Varad Pimpalkhute, Tongtong Liang, Feng Yao, Zhengzhong Liu, Eric Xing, Virginia Smith, Ruslan Salakhutdinov, Zhiting Hu, Taylor Killian, Aviral Kumar<br/>
+                <span class="italic">International Conference on Machine Learning (<a href="https://icml.cc">ICML</a>)</span>, 2026 (<span class="bold" style="color: #004c99;">Under Review</span>)<br/>
+                <a class="btn btn-orange" href="https://compute-optimal-rl-llm-scaling.github.io/">blog</a> / <a class="btn btn-red" href="https://arxiv.org/pdf/2603.12151">arXiv</a> / <a class="btn btn-dark" href="bibtex/cheng2026isocompute.txt">bibtex</a><br/>
+                <small style="color: #666;">A compute-optimal workflow for scaling on-policy RL sampling in LLM post-training.</small>
+            </div>
+        </div>
+
+        <div class="highlight publication row">
+            <div class="row-media" style="background-image: url(static/assets/images/tips.png);"></div>
+            <div class="row-text">
+                <a class="publication-title bold" href="https://arxiv.org/abs/2603.22293">TIPS: Turn-Level Information–Potential Reward Shaping for Search-Augmented LLMs</a><br/>
+                <span class="bold">Yutao Xie</span>, Nathaniel Thomas, Nicklas Hansen, Yang Fu, Erran Li, Xiaolong Wang<br/>
+                <span class="italic">International Conference on Learning Representations (<a href="https://iclr.cc">ICLR</a>)</span>, 2026<br/>
+                <a class="btn btn-red" href="https://arxiv.org/abs/2603.22293">arXiv</a> / <a class="btn" href="https://github.com/ucsd-wang-lab-lm/tips">code</a> / <a class="btn btn-dark" href="bibtex/xie2026tips.txt">bibtex</a><br/>
+                <small style="color: #666;">A self-distillation method leveraging mutual-information-based reward for finer credit assignment of RLVR.</small>
+            </div>
+        </div>
+
+        <div class="publication row">
+            <div class="row-media" style="background-image: url(static/assets/images/k2-think.png);"></div>
+            <div class="row-text">
+                <a class="publication-title bold" href="https://k2think.ai">K2-Think: A Parameter-Efficient Reasoning System</a><br/>
+                Institute of Foundation Models, MBZUAI (31 authors, including <span class="bold">Yutao Xie</span>)<br/>
+                <span class="italic">ArXiv Preprint</span>, 2025 (<span class="bold" style="color: #f37100;">Tech Report / Model Release</span>)<br/>
+                <a class="btn btn-orange" href="https://k2think.ai">project / models</a> / <a class="btn btn-red" href="https://arxiv.org/abs/2509.07604">arXiv</a> / <a class="btn btn-dark" href="bibtex/k2think2025.txt">bibtex</a><br/>
+                <small style="color: #666;">K2-Think is a 32B model that rivals much larger ones via six training/inference technique pillars.</small>
+            </div>
+        </div>
+
+        <div class="publication row">
+            <div class="row-media" style="background-image: url(static/assets/images/guru.jpg);"></div>
+            <div class="row-text">
+                <a class="publication-title bold" href="https://arxiv.org/abs/2506.14965">Revisiting Reinforcement Learning for LLM Reasoning from a Cross-Domain Perspective</a><br/>
+                Zhoujun Cheng, Shibo Hao, Tianyang Liu, Fan Zhou, <span class="bold">Yutao Xie</span>, Feng Yao, Yuexin Bian, Yonghao Zhuang, Nilabjo Dey, Yuheng Zha, Yi Gu, Kun Zhou, Yuqi Wang, Yuan Li, Richard Fan, Jianshu She, Chengqian Gao, Abulhair Saparov, Haonan Li, Taylor W. Killian, Mikhail Yurochkin, Zhengzhong Liu, Eric P. Xing, Zhiting Hu<br/>
+                <span class="italic">Conference on Neural Information Processing Systems (<a href="https://nips.cc">NeurIPS</a>) Datasets & Benchmarks</span>, 2025<br/>
+                <a class="btn btn-red" href="https://arxiv.org/abs/2506.14965">arXiv</a> / <a class="btn btn-orange" href="https://guru-reasoning.github.io/">website</a> / <a class="btn btn-dark" href="bibtex/cheng2025guru.txt">bibtex</a><br/>
+                <small style="color: #666;">A cross-domain RL dataset with analysis showing domain-dependent RL gains across six reasoning domains.</small>
+            </div>
+        </div>
+
+        <div class="publication row">
+            <div class="row-media" style="background-image: url(static/assets/images/pig-sound.png);"></div>
+            <div class="row-text">
+                <a class="publication-title bold" href="https://doi.org/10.1016/j.ipm.2024.103770">Sound Identification of Abnormal Pig Vocalizations: Enhancing Livestock Welfare Monitoring on Smart Farms</a><br/>
+                <span class="bold">Yutao Xie</span>, Jun Wang, Cheng Chen, Taixin Yin, Shiyu Yang, Zhiyuan Li, Ye Zhang, Juyang Ke, Le Song, Lin Gan<br/>
+                <span class="italic">Information Processing & Management (<a href="https://www.sciencedirect.com/journal/information-processing-and-management">IPM</a>)</span>, 2024<br/>
+                <a class="btn btn-red" href="https://doi.org/10.1016/j.ipm.2024.103770">journal</a> / <a class="btn btn-dark" href="bibtex/xie2024pig.txt">bibtex</a><br/>
+                <small style="color: #666;">A DDP inference system loaded with an AST-based detector method to help monitoring in smart farms.</small>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="misc-toggle noselect" onclick="toggleMisc()" id="misc-heading">
+            Misc <span class="misc-arrow" id="misc-arrow">▸</span>
+        </h2>
+        <div id="misc-content" class="misc-content">
+            <p class="misc-lede">
+                Outside research, the same habits follow me into everything else I spend time with. I am simply drawn to what people make—and what making things reveals about them.<br><br>
+                Away from the desk I lift weights <span aria-hidden="true">💪</span>, boulder badly as a beginner <span aria-hidden="true">🧗</span>, and spend more time than is reasonable dialing in pour-over coffee <span aria-hidden="true">☕</span>.
+            </p>
+            <p class="misc-bridge">
+                What follows is not a full list, and it is not in any special order. I just wrote down a few things that came to mind while I was putting this page together.
+            </p>
+            <h3 class="misc-picks-toggle noselect" onclick="toggleMiscPicks()" id="misc-picks-heading">
+                A few favorites <span class="misc-arrow" id="misc-picks-arrow">▸</span>
+            </h3>
+            <div id="misc-picks-content" class="misc-picks-content">
+                <div class="misc-grid">
+                    <section class="misc-block" aria-labelledby="pick-mr">
+                        <h4 class="misc-cat" id="pick-mr">Magic Realism</h4>
+                        <p class="misc-item"><em>One Hundred Years of Solitude and most of García Márquez's works</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-ex">
+                        <h4 class="misc-cat" id="pick-ex">Existentialism</h4>
+                        <p class="misc-item"><em>Steppenwolf</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-lyr">
+                        <h4 class="misc-cat" id="pick-lyr">Lyrical Introspection</h4>
+                        <p class="misc-item"><em>Klingsor's Last Summer</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-hist">
+                        <h4 class="misc-cat" id="pick-hist">Historical Narrative</h4>
+                        <p class="misc-item"><em>Hamilton</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-folk">
+                        <h4 class="misc-cat" id="pick-folk">Prog-rock Folk</h4>
+                        <p class="misc-item"><em>冀西南林路行</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-postrock">
+                        <h4 class="misc-cat" id="pick-postrock">Post-rock</h4>
+                        <p class="misc-item"><em>Lost in 21st Century</em> and most of Wangwen (惘闻)</p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-abm">
+                        <h4 class="misc-cat" id="pick-abm">Atmospheric Black Metal</h4>
+                        <p class="misc-item"><em>Gu Yan</em> · <em>Zuriaake</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-psych">
+                        <h4 class="misc-cat" id="pick-psych">Psychedelic Concept</h4>
+                        <p class="misc-item"><em>The Dark Side of the Moon</em></p>
+                    </section>
+                    
+                    <section class="misc-block" aria-labelledby="pick-ds">
+                        <h4 class="misc-cat" id="pick-ds">Environmental Storytelling ARPG</h4>
+                        <p class="misc-item"><em>Dark Souls / Elden Ring</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-de">
+                        <h4 class="misc-cat" id="pick-de">Philosophical CRPG</h4>
+                        <p class="misc-item"><em>Disco Elysium / Planescape: Torment</em></p>
+                    </section>
+                    <section class="misc-block" aria-labelledby="pick-pent">
+                        <h4 class="misc-cat" id="pick-pent">Historical Mystery</h4>
+                        <p class="misc-item"><em>Pentiment</em></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <h2>Contact</h2>
+        You are welcome to contact me regarding my research! You can reach me at <span class="bold">yux076@ucsd.edu or <span class="bold">yutaoxie@ucsb.edu</span>.
+    </div>
+</div>
+<div class="footer noselect">
+    <div class="footer-content">
+        &copy; 2026 Yutao Xie. Design inspired by <a href="https://nicklashansen.github.io">Nicklas Hansen</a>. You are welcome to fork it.
+    </div>
+</div>
+</body>
+</html>
