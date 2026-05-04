@@ -2,6 +2,5 @@
   title={IsoCompute Playbook: Optimally Scaling Sampling Compute for RL Training of LLMs},
   author={Cheng, Zhoujun and Xie, Yutao and Qu, Yuxiao and Setlur, Amrith and Hao, Shibo and Pimpalkhute, Varad and Liang, Tongtong and Yao, Feng and Liu, Zhengzhong and Xing, Eric and Smith, Virginia and Salakhutdinov, Ruslan and Hu, Zhiting and Killian, Taylor and Kumar, Aviral},
   booktitle={International Conference on Machine Learning (ICML)},
-  year={2026},
-  note={Accepted}
+  year={2026}
 }
