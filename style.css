@@ -20,6 +20,11 @@ strong, b {font-weight: 700;}
 .header-icons a {color: #2471a3; transition: color 0.2s;}
 .header-icons a:hover {color: #f09228;}
 .icon-sep {color: #bbb; font-size: 13px;}
+.internship-notice {display: flex; align-items: flex-start; gap: 12px; margin-top: 24px; padding: 16px 18px; border: 1px solid #bfe3f4; border-left: 4px solid #20a6d2; border-radius: 6px; background-color: #f1f9fe;}
+.internship-notice-dot {flex-shrink: 0; width: 9px; height: 9px; margin-top: 6px; border-radius: 50%; background-color: #20a6d2;}
+.internship-notice-title {margin: 0 0 6px; color: #08749a; font-size: 0.82em; font-weight: 700; line-height: 1.5; letter-spacing: 0.06em; text-transform: uppercase;}
+.internship-notice p {margin: 0; font-size: 0.95em; line-height: 1.65;}
+.internship-notice a {font-weight: 700; overflow-wrap: anywhere;}
 .content {max-width: 910px; padding-left: 16px; padding-right: 16px; margin: auto; margin-top: 48px;}
 a {color: #2471a3; text-decoration: none; transition: color 0.2s;}
 a:focus, a:hover {color: #f09228;}
@@ -93,6 +98,7 @@ ul {line-height: 1.8em;}
     .header-body {flex-direction: column-reverse; align-items: center; gap: 24px;}
     .header-right {width: 100%; max-width: 360px;}
     .header-title {font-size: 1.8em;}
+    .internship-notice {margin-right: 16px;}
 }
 
 @media only screen and (max-width: 1000px) {
