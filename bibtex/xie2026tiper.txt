@@ -1,0 +1,9 @@
+@misc{xie2026tiper,
+  title={Uncovering Robustness Weaknesses in {LLM} Agents via Persona Evolution with Task-Integrity Constraints},
+  author={Xie, Yutao and Yang, Jingbo and Yao, Guanyu and Yang, Xiaoyu and Ding, Duo and Chang, Shiyu},
+  year={2026},
+  eprint={2610.16155},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2610.16155}
+}
